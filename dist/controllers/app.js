@@ -24,18 +24,22 @@ class App {
         this.initErrorHandling();
     }
     initConfig() {
+        console.log("Setup Config....");
         new dbConnection_1.default();
     }
     initMiddlewares() {
+        console.log("Setup Middlewares....");
         this.app.use((0, cors_1.default)());
         this.app.use((0, helmet_1.default)());
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: true }));
     }
     initRoutes() {
+        console.log("Setup Routes....");
         this.app.use(`/api/${process.env.apiVersion}`, routes_1.default);
     }
     initErrorHandling() {
+        console.log("Setup Handlers....");
     }
     listen() {
         this.app.listen(this.port, () => {
