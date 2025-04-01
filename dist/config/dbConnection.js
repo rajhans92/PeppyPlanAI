@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 class DBConnect {
     constructor() {
-        this.connectionStr = process.env.MONGO_URI || "mongodb://localhost:27017/peppyplanai";
+        this.connectionStr = process.env.MONGO_URI || "mongodb://0.0.0.0:27017/peppyplanai";
         this.connect();
     }
     connect() {
@@ -26,7 +26,7 @@ class DBConnect {
                 console.log("Database connected successfully");
             }
             catch (error) {
-                console.error("Database connection failed");
+                console.error("Database connection failed ");
             }
         });
     }

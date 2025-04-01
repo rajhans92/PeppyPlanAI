@@ -8,11 +8,12 @@ const usersController_1 = __importDefault(require("../../controllers/usersContro
 class UserRoute {
     constructor() {
         this.router = (0, express_1.Router)();
-        this.userController = new usersController_1.default;
+        this.userController = new usersController_1.default();
         this.initRoutes();
     }
     initRoutes() {
-        this.router.get("/login", this.userController.login);
+        this.router.get("/login/auth/google", this.userController.loginAuth);
+        this.router.get("/login/auth/google/callback", this.userController.loginAuthCallback);
     }
 }
 exports.default = new UserRoute().router;
