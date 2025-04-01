@@ -9,3 +9,8 @@ code reference
 oauth2
 
 https://permify.co/post/oauth-20-implementation-nodejs-expressjs/
+
+
+google auth with frontend
+
+https://www.youtube.com/watch?v=a75PNthqQOI
