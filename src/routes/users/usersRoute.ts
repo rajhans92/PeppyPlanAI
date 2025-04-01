@@ -1,5 +1,6 @@
 import { Router } from "express";
 import UserController from "../../controllers/usersController";
+import jwt from "../../middlewares/jwt";
 
 class UserRoute{
 
@@ -8,12 +9,15 @@ class UserRoute{
 
     constructor() {
       this.router = Router();
-      this.userController = new UserController;
+      this.userController = new UserController();
       this.initRoutes();
     }
 
     private initRoutes(){
-        this.router.get("/login", this.userController.login);
+        this.router.get("/login/auth/google", this.userController.loginAuth);
+        this.router.get("/login/auth/google/callback", this.userController.loginAuthCallback);
+
+        this.router.get("/profile", jwt.authenticateJWT,this.userController.userProfile);
     }
 
 }

@@ -1,17 +1,29 @@
 import { Request, Response, NextFunction } from "express";
 
 class ErrorHandler {
-  static notFound(req: Request, res: Response, next: NextFunction) {
-    res.status(404).json({ message: "Resource not found" });
-  }
 
-  static serverError(
-    error: Error,
+  static error(
+    error: any,
     req: Request,
     res: Response,
     next: NextFunction
   ) {
-    res.status(500).json({ message: error.message });
+    
+    const statusCode = error.statusCode || 500;
+    const message = error.message || 'Internal Server Error';
+
+    // Log the error stack trace in development
+    if (process.env.NODE_ENV === 'dev') {
+        console.error(error.stack);
+    }
+
+    // Return a standardized error response
+    res.status(statusCode).json({
+        status: 'error',
+        statusCode,
+        message,
+    });
+
   }
 }
 

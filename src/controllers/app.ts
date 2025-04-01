@@ -1,5 +1,6 @@
-import express,{Application} from 'express';
 import dotenv from "dotenv";
+dotenv.config();
+import express,{Application} from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import DBConnect from '../config/dbConnection';
@@ -15,7 +16,6 @@ class App{
 
     constructor(){
         this.app = express();
-        dotenv.config();
         this.host = process.env.host || "http://localhost";
         this.port = parseInt(process.env.PORT || "3000");
         this.init();
@@ -48,8 +48,7 @@ class App{
 
     private initErrorHandling(){
         console.log("Setup Handlers....");
-        this.app.use(ErrorHandler.notFound);
-        this.app.use(ErrorHandler.serverError);
+        this.app.use(ErrorHandler.error);
     }
 
     public listen(){
