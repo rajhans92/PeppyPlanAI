@@ -1,4 +1,4 @@
-name: PeppyPlanAI dev deplyment build
+name: PeppyPlanAI dev build
 
 on:
   push:
