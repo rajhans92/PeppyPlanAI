@@ -21,4 +21,3 @@ https://newsletter.simpleaws.dev/p/nodejs-app-on-kubernetes-aws-eks
 mongoo cmd
 
 sudo mongod --dbpath=/Users/rupeshrajhans/data/db
-
