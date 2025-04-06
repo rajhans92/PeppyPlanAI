@@ -14,3 +14,11 @@ https://permify.co/post/oauth-20-implementation-nodejs-expressjs/
 google auth with frontend
 
 https://www.youtube.com/watch?v=a75PNthqQOI
+
+docker and aws eks(elastic kubernetes system) setup
+https://newsletter.simpleaws.dev/p/nodejs-app-on-kubernetes-aws-eks
+
+mongoo cmd
+
+sudo mongod --dbpath=/Users/rupeshrajhans/data/db
+
